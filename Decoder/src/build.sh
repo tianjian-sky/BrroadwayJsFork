@@ -1,0 +1,34 @@
+~/develop/emscripten-main/emcc ./Decoder.c 
+./h264bsd_transform.c
+./h264bsd_util.c
+./h264bsd_byte_stream.c
+./h264bsd_seq_param_set.c
+./h264bsd_pic_param_set.c
+./h264bsd_slice_header.c
+./h264bsd_slice_data.c
+./h264bsd_macroblock_layer.c
+./h264bsd_stream.c
+./h264bsd_vlc.c
+./h264bsd_cavlc.c
+./h264bsd_nal_unit.c
+./h264bsd_neighbour.c
+./h264bsd_storage.c
+./h264bsd_slice_group_map.c
+./h264bsd_intra_prediction.c
+./h264bsd_inter_prediction.c
+./h264bsd_reconstruct.c
+./h264bsd_dpb.c
+./h264bsd_image.c
+./h264bsd_deblocking.c
+./h264bsd_conceal.c
+./h264bsd_vui.c
+./h264bsd_pic_order_cnt.c
+./h264bsd_decoder.c
+./H264SwDecApi.c
+./extraFlags.c
+./Decoder.c
+ -O3 
+--memory-init-file=1 
+--llvm-opts=3 
+--llvm-lto=3 
+ -o Decoder.wasm.js -I=. -sNO_EXIT_RUNTIME=1 -sNO_FILESYSTEM=1 -sNO_BROWSER=1 -sTOTAL_MEMORY=52428800 -sINVOKE_RUN=0 -sDOUBLE_MODE=0 -sPRECISE_I64_MATH=0 -sAGGRESSIVE_VARIABLE_ELIMINATION=1 -sALIASING_FUNCTION_POINTERS=1 -sDISABLE_EXCEPTION_CATCHING=1  -sEXPORT_ES6=1 -sALLOW_MEMORY_GROWTH=1 -sEXPORTED_FUNCTIONS=HEAP8,HEAP16,HEAP32,_broadwayGetMajorVersion,_broadwayGetMinorVersion,_broadwayInit,_broadwayExit,_broadwayCreateStream,_broadwayPlayStream,_broadwayOnHeadersDecoded,_broadwayOnPictureDecoded   -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,getValue,setValue -sINITIAL_MEMORY=52428800 --js-library ../library.js

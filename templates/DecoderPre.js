@@ -15,7 +15,7 @@
 }(this, function () {
   
   var global;
-  
+  var decoderInstance
   function initglobal(){
     global = this;
     if (!global){
